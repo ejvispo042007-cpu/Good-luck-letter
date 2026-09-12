@@ -1,0 +1,343 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+
+/* =========================
+   FIRST SCREEN
+========================= */
+
+.screen {
+  height: 100vh;
+  width: 100%;
+  background: #2196F3;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  transition: 1s ease;
+  padding: 20px;
+}
+
+.screen h1 {
+  color: #ffffff;
+  font-size: 28px;
+  margin-bottom: 30px;
+  font-weight: normal;
+  text-align: center;
+}
+
+
+/* =========================
+   HEART
+========================= */
+
+.heart-container {
+  cursor: pointer;
+}
+
+.heart {
+  font-size: 70px;
+
+  animation: heartbeat 1.5s infinite ease-in-out;
+
+  transition: transform 0.3s ease;
+}
+
+.heart:hover {
+  transform: scale(1.2);
+}
+
+
+/* =========================
+   HEART ANIMATION
+========================= */
+
+@keyframes heartbeat {
+
+  0% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(1.12);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  75% {
+    transform: scale(1.12);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+
+}
+
+
+/* =========================
+   LETTER SCREEN
+========================= */
+
+.letter-screen {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  background: #2196F3;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: 1s ease;
+
+  overflow-y: auto;
+}
+
+
+/* =========================
+   SHOW LETTER
+========================= */
+
+.letter-screen.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter {
+  width: 100%;
+  max-width: 650px;
+
+  background: #ffffff;
+
+  padding: 45px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+  transform: scale(0.7);
+
+  transition: 1s ease;
+
+  margin: 20px auto;
+}
+
+.letter-screen.show .letter {
+  transform: scale(1);
+}
+
+
+/* =========================
+   LETTER TITLE
+========================= */
+
+.letter h2 {
+  font-family: Georgia, serif;
+
+  font-size: 38px;
+
+  font-weight: normal;
+
+  margin-bottom: 30px;
+
+  color: #1565C0;
+
+  text-align: center;
+}
+
+
+/* =========================
+   PARAGRAPHS
+========================= */
+
+.letter p {
+  font-size: 17px;
+
+  line-height: 1.7;
+
+  color: #333333;
+
+  margin-bottom: 20px;
+
+  text-align: left;
+
+  word-wrap: break-word;
+}
+
+
+/* =========================
+   SIGNATURE
+========================= */
+
+.signature {
+  margin-top: 30px;
+
+  font-size: 16px;
+
+  line-height: 1.5;
+
+  color: #333333;
+}
+
+
+/* =========================
+   BOTTOM HEART
+========================= */
+
+.bottom-heart {
+  position: relative;
+
+  display: block;
+
+  text-align: center;
+
+  margin-top: 15px;
+
+  font-size: 50px;
+
+  animation: heartbeat 1.5s infinite ease-in-out;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .screen {
+    padding: 20px;
+  }
+
+  .screen h1 {
+    font-size: 23px;
+    margin-bottom: 25px;
+  }
+
+  .heart {
+    font-size: 60px;
+  }
+
+
+  .letter-screen {
+    padding: 15px;
+
+    align-items: flex-start;
+
+    overflow-y: auto;
+  }
+
+
+  .letter {
+    width: 100%;
+
+    padding: 22px;
+
+    margin: 15px 0;
+
+    border-radius: 10px;
+  }
+
+
+  .letter h2 {
+    font-size: 28px;
+
+    margin-bottom: 20px;
+  }
+
+
+  .letter p {
+    font-size: 14px;
+
+    line-height: 1.65;
+
+    margin-bottom: 17px;
+  }
+
+
+  .signature {
+    font-size: 14px;
+
+    margin-top: 20px;
+  }
+
+
+  .bottom-heart {
+    font-size: 45px;
+
+    margin-top: 10px;
+  }
+
+}
+
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media (max-width: 380px) {
+
+  .screen h1 {
+    font-size: 21px;
+  }
+
+  .heart {
+    font-size: 55px;
+  }
+
+
+  .letter-screen {
+    padding: 10px;
+  }
+
+
+  .letter {
+    padding: 18px;
+  }
+
+
+  .letter h2 {
+    font-size: 25px;
+  }
+
+
+  .letter p {
+    font-size: 13px;
+
+    line-height: 1.6;
+  }
+
+
+  .bottom-heart {
+    font-size: 40px;
+  }
+
+}
